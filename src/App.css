@@ -1,3 +1,7 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -20,7 +24,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -37,16 +40,16 @@
   }
 }
 
-.container {
-  padding: 0;
+.main-nav__logo img {
+  display: block;
+  transition: transform 0.2s ease;
 }
 
 .tcgicon{
-  width: 275px;
-  height: 125px;
+  width: 125px;
+  height: 64px;
   border-radius: 10px;
   width: auto;
-  display: block;
   margin: 0 auto;
 }
 

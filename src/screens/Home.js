@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 
 function Home() {
@@ -55,8 +56,15 @@ function Home() {
   return (
     <>
       <div className="bkgd">
+        <div className="main-nav">         
+          <nav className="main-nav_inner">
+            <a className="main-nav_logo" href="./Home.js" alt="PokemonLogo">
+              <img className="tcgicon" src={logo}/>
+            </a>
+          </nav>
+
+        </div>    
         <div className="container">
-          <img className="tcgicon" src={logo}/>
           <div className="container-carousel">
             <Slider {...settings}>
               <div>
