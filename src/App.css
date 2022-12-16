@@ -39,7 +39,6 @@
 
 .container {
   padding: 0;
-  background-color: black;
 }
 
 .tcgicon{
@@ -49,4 +48,18 @@
   width: auto;
   display: block;
   margin: 0 auto;
+}
+
+h3 {
+  color: white;
+}
+
+.bkgd{
+  background-color: black;
+  width: auto;
+  height: 100vh;
+}
+
+.container-carousel{
+  padding: 10vh;
 }
