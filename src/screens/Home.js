@@ -3,23 +3,25 @@ import logo from '../resources/Logo_PokemonTCG.png'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import axios from "axios";
 import '../App.css';
 
 function Home() {
-  const [data, setData] = useState(null)
+  const [post, setPost] = useState(null)
   useEffect(() => {
-    getData();
+    axios.get("https://api.pokemontcg.io/v2/cards").then((response) => {
+      setPost(response.data.data);
+    });
   }, [])
-
-  const getData = async () => {
-    try {
-       const request = await fetch('https://dummyjson.com/products');
-       const response = await request.json();       
-       setData(response);
-     } catch (error) {
-      console.error(error)
-     }
-  }
+//  const getData = async () => {
+//    try {
+//       const request = await fetch('https://api.pokemontcg.io/v2/cards');
+//       const response = await request.json();       
+//       setData(response);
+//     } catch (error) {
+//      console.error(error)
+//     }
+//  }
 
   const settings = {
     dots: true,
@@ -49,7 +51,7 @@ function Home() {
     }
   ]
   };
-
+  if(!post) return null
   return (
     <div className="bkgd">
       <div className="container">
@@ -75,20 +77,14 @@ function Home() {
         </div>
         <h3>Cartas mas Valiosas:</h3>
         <div className="grid">          
+        {post && post.map((item) => (
           <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
+            <img className="card-image" src={item.images.large}></img>
           </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
+          ))}
         </div>
       </div>
+
     </div>
 
   );
