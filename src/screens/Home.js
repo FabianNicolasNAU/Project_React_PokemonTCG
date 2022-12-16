@@ -57,19 +57,22 @@ function Home() {
         <div className="container-carousel">
           <Slider {...settings}>
             <div>
-              <h3>1</h3>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
             </div>
             <div>
-              <h3>2</h3>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
             </div>
             <div>
-              <h3>3</h3>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
             </div>
             <div>
-              <h3>4</h3>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
             </div>
             <div>
-              <h3>5</h3>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
+            </div>
+            <div>
+              <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
             </div>
           </Slider>
         </div>
@@ -87,6 +90,7 @@ function Home() {
           <a>
             <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
           </a>
+          
         </div>
       </div>
     </div>
