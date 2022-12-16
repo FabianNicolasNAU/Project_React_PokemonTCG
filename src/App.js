@@ -7,7 +7,7 @@ function App() {
   return (
     <HashRouter>
       <Route exact path="/">
-        <Redirect to="/Login" />
+        <Redirect to="/Home" />
       </Route>
       <Route path="/Home" component={Home} />
       <Route path="/Login" component={Login} />
