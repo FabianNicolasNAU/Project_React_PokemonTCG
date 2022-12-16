@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 
 function Home() {
@@ -53,43 +54,50 @@ function Home() {
   };
   if(!post) return null
   return (
-    <div className="bkgd">
-      <div className="container">
-        <img className="tcgicon" src={logo}/>
-        <div className="container-carousel">
-          <Slider {...settings}>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
-            </div>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
-            </div>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
-            </div>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
-            </div>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
-            </div>
-            <div>
-              <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
-            </div>
-          </Slider>
-        </div>
-        <h3>Cartas mas Valiosas:</h3>
-        <div className="grid">          
-        {post && post.map((item) => (
-          <a>
-            <img className="card-image" src={item.images.large}></img>
-          </a>
-          ))}
+    <>
+      <div className="bkgd">
+        <div className="main-nav">         
+          <nav className="main-nav_inner">
+            <a className="main-nav_logo" href="./Home.js" alt="PokemonLogo">
+              <img className="tcgicon" src={logo}/>
+            </a>
+          </nav>
+
+        </div>    
+        <div className="container">
+          <div className="container-carousel">
+            <Slider {...settings}>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
+              </div>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
+              </div>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
+              </div>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
+              </div>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
+              </div>
+              <div>
+                <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
+              </div>
+            </Slider>
+          </div>
+          <h3>Cartas mas Valiosas:</h3>
+          <div className="grid">          
+          {post && post.map((item) => (
+            <a>
+              <img className="card-image" src={item.images.large}></img>
+            </a>
+            ))}
+          </div>
         </div>
       </div>
-
-    </div>
-
+    </>
   );
 }
 export default Home
