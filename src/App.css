@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  padding: 0;
+}
+
+.tcgicon{
+  width: 275px;
+  height: 125px;
+  border-radius: 10px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}

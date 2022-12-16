@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import logo from '../resources/Logo_PokemonTCG.png'
 import '../App.css';
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
 
   return (
     <div className="container">
-    <h1>Products List</h1>  
+      <img class="tcgicon" src={logo}/>
       <div class="grid">
         {data && data.products.map((item) => (
           <div className="item">
@@ -28,7 +29,6 @@ function Home() {
             <p key={item.description}>{item.description}</p>
             <img src={item.thumbnail}/>
           </div>
-
         ))}
       </div>
     </div>
