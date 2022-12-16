@@ -73,6 +73,21 @@ function Home() {
             </div>
           </Slider>
         </div>
+        <h3>Cartas mas Valiosas:</h3>
+        <div className="grid">          
+          <a>
+            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
+          </a>
+          <a>
+            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
+          </a>
+          <a>
+            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
+          </a>
+          <a>
+            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
+          </a>
+        </div>
       </div>
     </div>
 
