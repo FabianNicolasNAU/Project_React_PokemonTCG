@@ -73,7 +73,7 @@ function Home() {
             </div>
             <div>
               <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
-            </div>
+            </div>            
           </Slider>
         </div>
         <h3>Cartas mas Valiosas:</h3>
@@ -89,8 +89,7 @@ function Home() {
           </a>
           <a>
             <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          
+          </a>          
         </div>
       </div>
     </div>
