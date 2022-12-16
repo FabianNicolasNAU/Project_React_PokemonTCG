@@ -75,35 +75,16 @@ function Home() {
             </div>
             <div>
               <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
-            </div>            
+            </div>
           </Slider>
         </div>
         <h3>Cartas mas Valiosas:</h3>
         <div className="grid">          
         {post && post.map((item) => (
           <a>
-<<<<<<< HEAD
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>
-          <a>
-            <img className="card-image" src="https://images.pokemontcg.io/sm9/182.png"></img>
-          </a>          
-=======
             <img className="card-image" src={item.images.large}></img>
           </a>
           ))}
-          
-<<<<<<< HEAD
-=======
->>>>>>> 1811b293ee5550392384ca6974b15635ed00476e
->>>>>>> cbd2ca18d0fdf52ba88a2c7d7c0cc472ac4b6d94
->>>>>>> f51f7fe6ca1a49810b594ae970be0d08e0d4689c
         </div>
       </div>
 
