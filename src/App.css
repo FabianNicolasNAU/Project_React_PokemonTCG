@@ -49,3 +49,31 @@
   display: block;
   margin: 0 auto;
 }
+
+h3 {
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.bkgd{
+  background-color: black;
+  width: auto;
+  height: 100vh;
+}
+
+.container-carousel{
+  padding: 10vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+}
+
+.grid img {
+  width: 245px;
+  height: 342px;
+}
+
+
