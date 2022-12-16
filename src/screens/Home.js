@@ -9,7 +9,7 @@ import '../App.css';
 function Home() {
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards").then((response) => {
+    axios.get("https://api.pokemontcg.io/v2/cards?pageSize=20").then((response) => {
       setPost(response.data.data);
     });
   }, [])
@@ -84,11 +84,8 @@ function Home() {
           <a>
             <img className="card-image" src={item.images.large}></img>
           </a>
-<<<<<<< HEAD
           ))}
-=======
           
->>>>>>> 1811b293ee5550392384ca6974b15635ed00476e
         </div>
       </div>
 
