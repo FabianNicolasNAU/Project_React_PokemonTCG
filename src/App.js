@@ -1,14 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './views/Home';
+import { HashRouter, Route, Redirect } from 'react-router-dom';
+import Home from './screens/Home';
 import Login from './screens/Login';
 
 function App() {
   return (
     <HashRouter>
-      <Navigation />
-      <Route path="/home" component={Home} />
-      <Route path="/login" component={Login} />
+      <Route exact path="/">
+        <Redirect to="/Home" />
+      </Route>
+      <Route path="/Home" component={Home} />
+      <Route path="/Login" component={Login} />
     </HashRouter>
   );
 }
