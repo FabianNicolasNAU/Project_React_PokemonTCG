@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import Home from './screens/Home';

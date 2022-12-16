@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 import logo from '../resources/Logo_PokemonTCG.png'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 import '../App.css';
 
 function Home() {
@@ -18,19 +21,37 @@ function Home() {
      }
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
     <div className="container">
       <img class="tcgicon" src={logo}/>
-      <div class="grid">
-        {data && data.products.map((item) => (
-          <div className="item">
-            <p key={item.title}>{item.title}</p>
-            <p key={item.price}>{item.price}</p>
-            <p key={item.description}>{item.description}</p>
-            <img src={item.thumbnail}/>
-          </div>
-        ))}
-      </div>
+      <Slider {...settings}>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </Slider>
     </div>
   );
 }
