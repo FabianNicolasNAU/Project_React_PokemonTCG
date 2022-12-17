@@ -15,6 +15,12 @@ function Home() {
       setPost(response.data.data);
     });
   }, [])
+  const [alto, setAlto] = useState(null)
+  useEffect(() => {
+    axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.1stEditionHolofoil.high&page=1&pageSize=6").then((response) => {
+      setAlto(response.data.data);
+    });
+  }, [])
 //  const getData = async () => {
 //    try {
 //       const request = await fetch('https://api.pokemontcg.io/v2/cards');
@@ -58,7 +64,7 @@ function Home() {
     <>
       <div className="bkgd">
         <nav>
-          <button>
+          <button onClick={sessionStorage.clear()}>
             Log Out
           </button>
         </nav> 
