@@ -64,9 +64,10 @@ h3 {
 }
 
 .bkgd-login {
-  background-image: url("https://wallpaperaccess.com/full/8094992.gif");
+  background-image: url("https://images7.alphacoders.com/310/thumb-1920-310611.jpg");
   background-repeat: no-repeat;
-  width: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .container-carousel{

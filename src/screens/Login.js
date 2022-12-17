@@ -32,7 +32,7 @@ function Login() {
   
   return (
     <>
-      <div className="bkgd-login" style={{paddingTop:'11rem'}} > 
+      <div className="bkgd-login" style={{paddingTop:'11vh'}} > 
         <Card style={{ width: '40rem' , minHeight: '18rem', maxHeight:'24rem', margin: '0 auto'}}>
           <Card.Body >
             <Form >
@@ -84,7 +84,9 @@ function Login() {
               </Alert>
             </Col>
           </Row>
+          <div style={{paddingTop:'50.7vh'}} > </div>
       </div>
+      
     </>
   );
 }
