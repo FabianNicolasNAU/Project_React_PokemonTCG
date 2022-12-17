@@ -8,29 +8,30 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 import Lista from "../components/Lista";
-
+import Table from 'react-bootstrap/Table';
 function Home() {
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.market&page=1&pageSize=32").then((response) => {
+    axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.market&page=1&pageSize=35").then((response) => {
       setPost(response.data);
     });
   }, [])
+
   const [alto, setAlto] = useState(null)
   useEffect(() => {
     axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.1stEditionHolofoil.high&page=1&pageSize=12").then((response) => {
       setAlto(response.data.data);
     });
   }, [])
-//  const getData = async () => {
-//    try {
-//       const request = await fetch('https://api.pokemontcg.io/v2/cards');
-//       const response = await request.json();       
-//       setData(response);
-//     } catch (error) {
-//      console.error(error)
-//     }
-//  }
+
+  const [busca, setBusca] = useState("")
+
+  const [busqueda, setBusqueda] = useState(null)
+  useEffect(() => {
+    axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${busca}*&page=1&pageSize=7`).then((response) => {
+      setBusqueda(response.data.data);
+    });
+  }, [busca])
 
   const settings = {
     dots: true,
@@ -61,7 +62,6 @@ function Home() {
   ]
   };
   if(!post) return null
-  console.log(post)
   return (
     <>
       <div className="bkgd">
@@ -76,17 +76,30 @@ function Home() {
         <div className="main_search h-100">
           <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
-              <input class="search_input" type="text" name="" placeholder="Search here..."/>
+              <input class="search_input" type="text" name="" onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
               <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
             </div>
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
         </div>
-          <div className="container-carousel">
+        <div class="d-flex justify-content-center">
+            <div style={{position:'absolute', zIndex:'10'}}>
+              <Table bordered hover size="sm" variant="dark" responsive="sm" style={{ cursor:'pointer'}}>
+                <tbody>
+                  {busqueda && busqueda.map((item) => (
+                      <tr>
+                        <td style={{width:'58vh'}} onClick={()=> console.log("hay que pasar a screen Card")}>{item.name} {item.rarity} ({item.id})</td>
+                      </tr>                       
+                    ))}
+                </tbody>
+              </Table>
+            </div>
+          </div>
+          <div className="container-carousel" style={{zIndex:'-1'}}>
             <Slider {...settings}>
               {alto && alto.map((item) => (
                 <div className="card-position">
-                  <img className="card-image" src={item.images.small} alt="Pokemon Card"></img>
+                  <img className="card-image" src={item.images.small} alt="Pokemon Card" ></img>
                 </div>
               ))}
             </Slider>
