@@ -8,9 +8,9 @@ import Card from './screens/Card';
 
 function App() {
   //localStorage.clear();
-  console.log(sessionStorage)
+  console.log(localStorage)
   return (
-    <HashRouter>{!sessionStorage.auth &&(
+    <HashRouter>{!localStorage.auth &&(
       <Redirect to="/Login"/>
     )}
       <Route exact path="/" component={Home}/>

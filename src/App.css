@@ -71,13 +71,14 @@ h3 {
 }
 
 .container-carousel{
-  padding: 9vh;
+  padding: 4rem 10rem 10vh 10rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 3rem;
+  padding: 0rem 6rem 0rem 6rem;
 }
 
 .grid img {

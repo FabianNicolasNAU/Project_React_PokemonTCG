@@ -22,7 +22,7 @@ function Login() {
   
     if(user === loginPass.usuario && pass === loginPass.password){
       const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
-        sessionStorage.setItem("auth", token);
+        localStorage.setItem("auth", token);
         window.location.href = '/'
     }
     else{
