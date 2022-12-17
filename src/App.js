@@ -4,10 +4,9 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import Card from './screens/Card';
 
-
+const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
 function App() {
-  //localStorage.clear();
   console.log(sessionStorage)
   return (
     <HashRouter>{!sessionStorage.auth &&(

@@ -7,6 +7,7 @@ import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import '../App.css';
+import Lista from "../components/Lista";
 
 function Home() {
   const [post, setPost] = useState(null)
@@ -80,7 +81,6 @@ function Home() {
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
         </div>
-        <div className="container">
           <div className="container-carousel">
             <Slider {...settings}>
               {alto && alto.map((item) => (
@@ -90,15 +90,8 @@ function Home() {
               ))}
             </Slider>
           </div>
-          <h3>Cartas mas Valiosas:</h3>
-          <div className="grid">          
-          {post && post.map((item) => (
-            <a>
-              <img className="card-image" src={item.images.small}></img>
-            </a>
-            ))}
-          </div>
-        </div>
+          <h3>Cartas mas Valiosas:</h3>             
+            {post && Lista(post)}
       </div>
     </>
   );
