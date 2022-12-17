@@ -90,8 +90,9 @@ function Home() {
               ))}
             </Slider>
           </div>
-          <h3>Cartas mas Valiosas:</h3>             
-            {post && Lista(post)}
+
+          <h3>Cartas mas Valiosas:</h3>          
+          {post && Lista(post)}
       </div>
     </>
   );
