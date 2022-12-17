@@ -95,7 +95,7 @@ h3 {
 }
 
 .search_input{
-  color: white;
+  color: black;
   border: 0;
   outline: 0;
   background: none;
@@ -106,19 +106,19 @@ h3 {
   transition: width 0.4s linear;
 }
 
-  .search .search_input{
+.search .search_input{
   padding: 0 10px;
   width: 550px;
   caret-color:rgb(0, 132, 255);
   transition: width 0.4s linear;
-  }
-  
-  .search:hover > .search_icon{
+}
+
+.search:hover > .search_icon{
   background: rgb(0, 132, 255);
   color: #fff;
-  }
+}
 
-  .search_icon{
+.search_icon{
   height: 50px;
   width: 50px;
   float: right;
@@ -128,7 +128,7 @@ h3 {
   border-radius: 50%;
   color:white;
   background-color:black;
-  }
+}
   
 a:link{
   text-decoration:none;
@@ -138,4 +138,21 @@ a:link{
   margin-left: auto;
   margin-right: auto;
   display: block;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
 }
+
+.card-image:hover{
+  transform: scale(1.1);
+}
+
+nav{
+  background-color: black;
+  overflow: hidden;
+  height: 50px;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+

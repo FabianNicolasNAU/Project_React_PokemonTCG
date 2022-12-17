@@ -35,10 +35,12 @@ function Home() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     centerMode: true,
-    centerPadding: '60px',
+    centerPadding: '80px',
     slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
     {
       breakpoint: 768,
@@ -46,7 +48,7 @@ function Home() {
         arrows: false,
         centerMode: true,
         centerPadding: '40px',
-        slidesToShow: 3
+        slidesToShow: 2
       }
     },
     {
@@ -69,7 +71,7 @@ function Home() {
             Log Out
           </button>
         </nav> 
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '8vh'}}>
           <img className="tcgicon" src={logo}/>  
         </div> 
         <div className="main_search h-100">
@@ -85,7 +87,7 @@ function Home() {
             <Slider {...settings}>
               {alto && alto.map((item) => (
                 <div className="card-position">
-                  <img className="card-image" src={item.images.small}></img>
+                  <img className="card-image" src={item.images.small} alt="Pokemon Card"></img>
                 </div>
               ))}
             </Slider>
