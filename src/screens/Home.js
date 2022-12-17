@@ -68,7 +68,7 @@ function Home() {
             Log Out
           </button>
         </nav> 
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '8vh'}}>
           <img className="tcgicon" src={logo}/>  
         </div> 
         <div className="main_search h-100">
