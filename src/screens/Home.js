@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 
 function Home() {
@@ -56,14 +57,18 @@ function Home() {
   return (
     <>
       <div className="bkgd">
-        <div className="main-nav">         
-          <nav className="main-nav_inner">
-            <a className="main-nav_logo" href="./Home.js" alt="PokemonLogo">
-              <img className="tcgicon" src={logo}/>
-            </a>
-          </nav>
-
-        </div>    
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '10vh'}}>
+          <img className="tcgicon" src={logo}/>  
+        </div>
+        <img src="../resources/pikachu-running.gif" alt="Pikachu running"/> 
+        <div className="main_search h-100">
+          <div class="d-flex justify-content-center h-100">
+            <div class="search">
+              <input class="search_input" type="text" name="" placeholder="Search here..."/>
+              <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+            </div>
+          </div>
+        </div>
         <div className="container">
           <div className="container-carousel">
             <Slider {...settings}>
