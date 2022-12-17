@@ -57,13 +57,11 @@ h3 {
 }
 
 .bkgd{
-<<<<<<< HEAD
-width: calc(50% + 50px);
-height: 100%;
-background-color: rgb(31, 223, 223);
-border-left: 100px solid white;
-border-bottom: 480px solid transparent;
-=======
+  width: calc(50% + 50px);
+  height: 100%;
+  background-color: rgb(31, 223, 223);
+  border-left: 100px solid white;
+  border-bottom: 480px solid transparent;
   background-image: url("https://free4kwallpapers.com/uploads/originals/2018/06/18/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -75,7 +73,6 @@ border-bottom: 480px solid transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
->>>>>>> f2a8bd9e43f7ef65df97658d572145e704da505d
 }
 
 .container-carousel{
@@ -93,13 +90,14 @@ border-bottom: 480px solid transparent;
   height: 342px;
 }
 
-<<<<<<< HEAD
+
 .bkgdCard{
   background: linear-gradient(to right, purple 0%, purple 50%, white 50%, white 100%);
   width: auto;
   height: 100vh;
   padding: 10vh;
-=======
+}
+
 .search{
   margin-bottom: auto;
   margin-top: auto;
@@ -169,7 +167,7 @@ nav{
   top: 0;
   width: 100%;
   z-index: 1000;
->>>>>>> f2a8bd9e43f7ef65df97658d572145e704da505d
+
 }
 
 
