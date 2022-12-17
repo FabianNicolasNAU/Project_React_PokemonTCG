@@ -15,15 +15,6 @@ function Home() {
       setPost(response.data.data);
     });
   }, [])
-//  const getData = async () => {
-//    try {
-//       const request = await fetch('https://api.pokemontcg.io/v2/cards');
-//       const response = await request.json();       
-//       setData(response);
-//     } catch (error) {
-//      console.error(error)
-//     }
-//  }
 
   const settings = {
     dots: true,
