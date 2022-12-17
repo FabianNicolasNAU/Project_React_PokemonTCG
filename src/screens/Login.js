@@ -1,15 +1,37 @@
-//import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Alert from 'react-bootstrap/Alert';
 import '../App.css';
 
-
 function Login() {
+  const [show, setShow] = useState(false);
+
+  const [user, setUser] = useState(null)
+
+  const [pass, setPass] = useState(null)
+  const handleSubmit = () => {
+    const loginPass = {
+      usuario: 'sus',
+      password: 'sus123'
+    }
+  
+    if(user === loginPass.usuario && pass === loginPass.password){
+      const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
+        sessionStorage.setItem("auth", token);
+        window.location.href = '/'
+    }
+    else{
+      !show && setShow(true)
+    }
+  };
+  
   return (
+    
     <div style={{paddingTop:'11rem'}} > 
       <Card style={{ width: '40rem' , minHeight: '18rem', maxHeight:'24rem' , margin: '0 auto'  }}>
         <Card.Body>
@@ -21,7 +43,7 @@ function Login() {
                 Nombre de usuario
               </Form.Label>
               <Col column lg={5}>
-                <Form.Control type="text" placeholder="Username" />
+                <Form.Control type="text" placeholder="Username" onChange={(event) => setUser(event.target.value)} />
               </Col>
             </Row>
             <br />
@@ -30,24 +52,38 @@ function Login() {
                 Contraseña
               </Form.Label>
               <Col column lg={5}>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" onChange={(event) => setPass(event.target.value)} />
               </Col>
             </Row>
             <br />
             <Row>
-              <Col>
-              </Col>
-              <Col>
-                <Button color="primary" className="px-4" onClick={() => window.location.href="http://localhost:3000/"}>
+              <Col md={{ span: 4, offset: 4 }}>
+                <Button color="primary" className="px-4" onClick={handleSubmit}>
                   Login
                 </Button>
               </Col>
-              <Col>
+              <Col md={{ span: 1, offset: 2 }}>
+                <img src="https://media.tenor.com/fPy5h_wW5IQAAAAi/torchic-pokemon.gif" style={{width:'6vh'}}></img>
               </Col>
             </Row>
           </Form>
         </Card.Body>
       </Card>
+      <br />
+        <Row>
+          <Col column lg={4}>
+          </Col>
+          <Col column lg={4}>
+            <Alert show={show} variant="success" className="text-start">
+              <Alert.Heading>Error en el Usuario o Contraseña</Alert.Heading>
+              <div className="d-flex justify-content-end">
+                <Button onClick={() => setShow(false)} variant="outline-success">
+                  Close
+                </Button>
+              </div>
+            </Alert>
+          </Col>
+        </Row>
     </div>
   );
 }

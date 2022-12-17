@@ -4,9 +4,15 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import Card from './screens/Card';
 
+
+
 function App() {
+  //localStorage.clear();
+  console.log(sessionStorage)
   return (
-    <HashRouter>
+    <HashRouter>{!sessionStorage.auth &&(
+      <Redirect to="/Login"/>
+    )}
       <Route exact path="/" component={Home}/>
       <Route path="/Login" component={Login} />
       <Route path="/Card" component={Card} />
