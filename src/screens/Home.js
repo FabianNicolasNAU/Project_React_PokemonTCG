@@ -11,10 +11,19 @@ import '../App.css';
 function Home() {
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards?pageSize=20").then((response) => {
+    axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.market&page=1&pageSize=32").then((response) => {
       setPost(response.data.data);
     });
   }, [])
+//  const getData = async () => {
+//    try {
+//       const request = await fetch('https://api.pokemontcg.io/v2/cards');
+//       const response = await request.json();       
+//       setData(response);
+//     } catch (error) {
+//      console.error(error)
+//     }
+//  }
 
   const settings = {
     dots: true,
@@ -68,31 +77,18 @@ function Home() {
         <div className="container">
           <div className="container-carousel">
             <Slider {...settings}>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img>
-              </div>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img>
-              </div>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img>
-              </div>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img>
-              </div>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img>
-              </div>
-              <div className="card-position">
-                <img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img>
-              </div>
+              {alto && alto.map((item) => (
+                <div className="card-position">
+                  <img className="card-image" src={item.images.small}></img>
+                </div>
+              ))}
             </Slider>
           </div>
           <h3>Cartas mas Valiosas:</h3>
           <div className="grid">          
           {post && post.map((item) => (
             <a>
-              <img className="card-image" src={item.images.large}></img>
+              <img className="card-image" src={item.images.small}></img>
             </a>
             ))}
           </div>
