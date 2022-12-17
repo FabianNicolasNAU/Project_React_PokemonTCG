@@ -57,7 +57,12 @@ function Home() {
   return (
     <>
       <div className="bkgd">
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '10vh'}}>
+        <nav>
+          <button>
+            Log Out
+          </button>
+        </nav> 
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
           <img className="tcgicon" src={logo}/>  
         </div>
         <img src="../resources/pikachu-running.gif" alt="Pikachu running"/> 
