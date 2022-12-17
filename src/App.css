@@ -57,7 +57,7 @@ h3 {
 }
 
 .bkgd{
-  background-image: radial-gradient(circle, #274676, #285f91, #2579ac, #2293c5, #23afdc);
+  background-image: linear-gradient(to right top, #f45353, #ff7f47, #ffaa42, #ffd54b, #ffff69);
 }
 
 .container-carousel{

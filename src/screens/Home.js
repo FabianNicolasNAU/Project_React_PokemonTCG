@@ -64,7 +64,7 @@ function Home() {
     <>
       <div className="bkgd">
         <nav>
-          <button>
+          <button onClick={sessionStorage.clear()}>
             Log Out
           </button>
         </nav> 
