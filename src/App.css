@@ -56,9 +56,11 @@ h3 {
 }
 
 .bkgd{
-  background-color: black;
-  width: auto;
-  height: 100vh;
+width: calc(50% + 50px);
+height: 100%;
+background-color: rgb(31, 223, 223);
+border-left: 100px solid white;
+border-bottom: 480px solid transparent;
 }
 
 .container-carousel{
@@ -76,4 +78,55 @@ h3 {
   height: 342px;
 }
 
+.bkgdCard{
+  background: linear-gradient(to right, purple 0%, purple 50%, white 50%, white 100%);
+  width: auto;
+  height: 100vh;
+  padding: 10vh;
+}
 
+
+.card-image {
+  width: 500px;
+  height: 600px;
+  float: left;
+  
+}
+
+.card-info {
+  padding: 125px;
+  text-align: center;
+  font-size: x-large;
+  font: 14px/1.5 'Open Sans',Helvetica,Arial,sans-serif;
+}
+
+.card-name {
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif;                                       
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.card-supertype {
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif; 
+  text-align: center;
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+}
+
+.card-level {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif; 
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+}
+
+.card-type {
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif; 
+  font-size: x-large;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
