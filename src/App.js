@@ -7,7 +7,16 @@ import Card from './screens/Card';
 const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
 function App() {
+<<<<<<< HEAD
   console.log(localStorage)
+=======
+<<<<<<< HEAD
+  //localStorage.clear();
+  console.log(localStorage)
+=======
+  console.log(sessionStorage)
+>>>>>>> 2feaa4cd8d0942bab12712d854865c17e13dbea8
+>>>>>>> bc9ededac8681d0bb6e738d5fed3b8b99ac342e4
   return (
     <HashRouter>{!localStorage.auth &&(
       <Redirect to="/Login"/>
