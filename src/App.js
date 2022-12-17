@@ -7,9 +7,9 @@ import Card from './screens/Card';
 const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
 function App() {
-  console.log(sessionStorage)
+  console.log(localStorage)
   return (
-    <HashRouter>{!sessionStorage.auth &&(
+    <HashRouter>{!localStorage.auth &&(
       <Redirect to="/Login"/>
     )}
       <Route exact path="/" component={Home}/>

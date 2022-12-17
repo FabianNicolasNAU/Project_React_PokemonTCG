@@ -13,7 +13,7 @@ function Home() {
   const [post, setPost] = useState(null)
   useEffect(() => {
     axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.market&page=1&pageSize=32").then((response) => {
-      setPost(response.data.data);
+      setPost(response.data);
     });
   }, [])
   const [alto, setAlto] = useState(null)
@@ -63,6 +63,7 @@ function Home() {
   ]
   };
   if(!post) return null
+  console.log(post)
   return (
     <>
       <div className="bkgd">
@@ -92,8 +93,8 @@ function Home() {
               ))}
             </Slider>
           </div>
-          <h3>Cartas mas Valiosas:</h3>             
-            {post && Lista(post)}
+          <h3>Cartas mas Valiosas:</h3>    
+          <Lista {...post}/>         
       </div>
     </>
   );
