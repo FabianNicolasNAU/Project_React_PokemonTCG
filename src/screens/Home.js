@@ -64,36 +64,36 @@ function Home() {
         </nav> 
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
           <img className="tcgicon" src={logo}/>  
-        </div>
-        <img src="../resources/pikachu-running.gif" alt="Pikachu running"/> 
+        </div> 
         <div className="main_search h-100">
-          <div class="d-flex justify-content-center h-100">
+          <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
               <input class="search_input" type="text" name="" placeholder="Search here..."/>
               <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
             </div>
+            <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
         </div>
         <div className="container">
           <div className="container-carousel">
             <Slider {...settings}>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img>
               </div>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img>
               </div>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img>
               </div>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/gym2/2.png"></img>
               </div>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/pop3/1.png"></img>
               </div>
-              <div>
-                <h3><img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img></h3>
+              <div className="card-position">
+                <img className="card-image" src="https://images.pokemontcg.io/smp/SM167.png"></img>
               </div>
             </Slider>
           </div>
