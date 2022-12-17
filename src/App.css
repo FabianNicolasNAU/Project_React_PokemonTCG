@@ -57,7 +57,20 @@ h3 {
 }
 
 .bkgd{
+<<<<<<< HEAD
   background-image: linear-gradient(to right top, #f45353, #ff7f47, #ffaa42, #ffd54b, #ffff69);
+=======
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2018/06/18/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+}
+
+.bkgd-login {
+  background-image: url("https://wallpaperaccess.com/full/8094992.gif");
+  background-repeat: no-repeat;
+  width: 100%;
+>>>>>>> 20b56e221c5f8479616f7353db91eb9435b7154d
 }
 
 .container-carousel{
@@ -99,12 +112,12 @@ h3 {
   .search .search_input{
   padding: 0 10px;
   width: 550px;
-  caret-color:red;
+  caret-color:rgb(0, 132, 255);
   transition: width 0.4s linear;
   }
   
   .search:hover > .search_icon{
-  background: red;
+  background: rgb(0, 132, 255);
   color: #fff;
   }
 
