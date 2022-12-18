@@ -6,7 +6,6 @@ import Card from './screens/Card';
 import List from './screens/List';
 
 function App() {
-  console.log(localStorage)
   return (
     <div>
       <Router>
