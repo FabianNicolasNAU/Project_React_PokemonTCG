@@ -9,8 +9,13 @@ import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
-import {Redirect, Link} from 'react-router-dom';
-function Home({autorizado}) {
+import {Navigate, useNavigate} from 'react-router-dom';
+function Home() {
+
+  const navigate = useNavigate();
+
+  const [boton, setBoton] = useState(false)
+
   const [post, setPost] = useState(null)
   useEffect(() => {(
     async () =>{
@@ -36,9 +41,10 @@ function Home({autorizado}) {
 
   const [busqueda, setBusqueda] = useState(null)
   useEffect(() => {(
-    async () =>{if(busca !=""){
-      axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${busca}*&page=1&pageSize=7`).then((response) => {
-        setBusqueda(response.data.data);
+    async () =>{
+      if(busca !==""){
+        axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${busca}*&page=1&pageSize=7`).then((response) => {
+          setBusqueda(response.data.data);
       });
     }
     else{
@@ -49,6 +55,11 @@ function Home({autorizado}) {
   )();
     
   }, [busca])
+
+  if(boton === true){
+    localStorage.clear()
+    return <Navigate to={"/Login"}/>
+  }
 
   const settings = {
     dots: true,
@@ -78,18 +89,13 @@ function Home({autorizado}) {
     }
   ]
   };
-  console.log(autorizado)
-  if(!autorizado){
-    return <Redirect to="/Login"/>
-  }
   if(!post) return null
   return (
     <>
       <div className="bkgd">
         <nav>
-          <button onClick={localStorage.clear()}>
+          <button onClick={() =>{setBoton(true)} }>
             Log Out
-            <Link to="/Login"></Link>
           </button>
         </nav> 
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
@@ -99,7 +105,7 @@ function Home({autorizado}) {
           <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
               <input class="search_input" type="text" name="" onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
-              <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+              {/*<a href="#" class="search_icon"><i class="fa fa-search"></i></a>*/}
             </div>
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
@@ -110,7 +116,7 @@ function Home({autorizado}) {
                 <tbody>
                   {busqueda && busqueda.map((item) => (
                       <tr>
-                        <td style={{width:'58vh'}} onClick={()=> {return <Redirect to="/Card"/>}}>{item.name} {item.rarity} ({item.id})</td>
+                        <td style={{width:'58vh'}} onClick={()=> {console.log("aaa")}}>{item.name} {item.rarity} ({item.id})</td>
                       </tr>                       
                     ))}
                 </tbody>
