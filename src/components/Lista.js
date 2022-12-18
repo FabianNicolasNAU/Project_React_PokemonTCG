@@ -13,8 +13,14 @@ function Lista (post) {
     console.log(post.data)
     if(post.data.length == 0) {
         return (
-            <div className="bkgd d-flex justify-content-center"> 
-                <span className= "display-2" style={{fontWeight: 'bold', paddingTop: '13.9vh',paddingBottom: '13vh' }}>NO SE HAN ENCONTRADO RESULTADOS</span>
+            <div>
+                <div className="bkgd d-flex justify-content-center"> 
+                    <span className= "display-2" style={{fontWeight: 'bold', paddingTop: '7.1vh',paddingBottom: '1vh',color:'white' }}>NO SE HAN ENCONTRADO RESULTADOS</span>        
+                </div>
+                <div className="bkgd d-flex justify-content-center">
+                    <img src="https://media.tenor.com/B-I9jCO00-4AAAAj/pokemon-cubone.gif" style={{height:'70%' }}></img> 
+                </div>
+
             </div>
         );
     }

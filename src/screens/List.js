@@ -26,7 +26,7 @@ function List (){
             <BarraNav />
             <div className="bkgd"> 
                 <div style={{paddingTop:'2vh'}}> 
-                    <h2 className="text-center" style={{paddingTop:'2vh'}}>Resultados para {carta} </h2> 
+                    <h2 className="text-center" style={{color:'white', paddingTop:'2vh'}}>Resultados para {carta} </h2> 
                     <Lista {...post} />
                 </div> 
             </div>  
