@@ -7,6 +7,12 @@ import Card from './screens/Card';
 const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
 function App() {
+  let auth = false
+  if(localStorage.auth) auth = true
+  else{
+    auth = false
+
+  }
   return (
     <HashRouter>
       <Route exact path="/" component={() => <Home autorizado={auth}/>}/>
