@@ -5,10 +5,14 @@ import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './Card.css';
-import {Navigate, useLocation} from 'react-router-dom';
+import {Navigate, useLocation, useNavigate} from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import logo from '../resources/Logo_PokemonTCG.png'
+import Container from 'react-bootstrap/Container';
 
 function Card() {
   const {state} = useLocation();
+  const navigate = useNavigate();
   const { carta } = state;
   console.log(carta)
   const [post, setPost] = useState(null)
@@ -29,6 +33,11 @@ function Card() {
   return (
     <>
       <body className={post.rarity}>
+        <Navbar expand="lg" variant="light" bg="transparent" style={{height:"10vh", width:"85%"}}>
+          <Container >
+            <Navbar.Brand onClick={()=>navigate('/')}><img src={logo} style={{width:'15%', cursor:'pointer'}}></img></Navbar.Brand>
+          </Container>       
+        </Navbar>
         <div className="card-select-main">            
           <div className={post.types[0]}>
             <div className="wraper">

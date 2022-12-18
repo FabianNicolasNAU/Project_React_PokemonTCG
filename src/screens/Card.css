@@ -89,7 +89,7 @@ body{
 }
 
 .card-select-main {
-    padding: 10rem 10rem 0rem 10rem;
+    padding: 6rem 10rem 0rem 10rem;
     box-sizing: border-box;
 }
 
@@ -126,12 +126,15 @@ body{
     --colorpokemon: #fad000;
 }
 
-.Water {
-    --colorpokemon: #3793dc;
-}
-
 .Metal {
     --colorpokemon: #717170;
+}
+
+.Psychic {
+    --colorpokemon: #9052a0;
+}
+.Water {
+    --colorpokemon: #3793dc;
 }
 
 body[class="Rare Rainbow"] {
