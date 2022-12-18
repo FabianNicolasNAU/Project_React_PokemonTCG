@@ -11,7 +11,6 @@ import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
 import {Redirect, Link} from 'react-router-dom';
 function Home({autorizado}) {
-  
   const [post, setPost] = useState(null)
   useEffect(() => {(
     async () =>{
