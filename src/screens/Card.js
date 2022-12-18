@@ -29,8 +29,7 @@ function Card() {
   return (
     <>
       <body className={post.rarity}>
-        <div className="card-select-main"> 
-            
+        <div className="card-select-main">            
           <div className={post.types[0]}>
             <div className="wraper">
               <div className="div-1">
@@ -44,16 +43,16 @@ function Card() {
                       <Row className="h-100">
                         <Col className="text-start" column lg={9}><span>{post.name}</span></Col>
                         <Col className="text-end" column lg={2}><span style={{fontSize:"0.5em", color:"grey", marginLeft:'40%'}}>&nbsp;HP&nbsp;{post.hp}&nbsp;</span></Col>
-                        <Col className="text-end" column lg={1}><img src={require(`../resources/types/${post.types}.png`)} alt={post.types} style={{width:'4vh',marginRight:'100%'}}/></Col>
+                        <Col className="text-end" column lg={1}><img src={require(`../resources/types/${post.types[0]}.png`)} alt={post.types} style={{width:'4vh',marginRight:'100%'}}/></Col>
                       </Row>
                     </nav>                    
                   <div className="card-info-subtitle" style={{borderBottom:'1px solid black'}}>
                     <span>{post.supertype} - {post.subtypes.join(', ')}</span>
                   </div>
-                  <div className="card-info-price" style={{borderBottom:'1px solid black', paddingTop:'1.2%'}}>
+                  <div className="card-info-price" style={{borderBottom:'1px solid black', paddingTop:'1.2%', paddingBottom:'1%'}}>
                     {post.tcgplayer ? (
                       <div className="card-info-price-tcgplayer">
-                        <span>TCG-Player</span><br/>
+                        <a href={post.tcgplayer.url}><span>TCG-Player</span></a><br/>
                         {Object.keys(post.tcgplayer.prices).map((priceType) => (
                           <>
                             <span>{priceType}:</span>
@@ -69,8 +68,8 @@ function Card() {
                       </div>
                     ) : null}
                     {post.cardmarket ? (
-                      <div className="card-info-price-cardmarket" style={{paddingTop:'1.5%'}}>
-                        <span>Card Market</span>
+                      <div className="card-info-price-cardmarket" style={{paddingTop:'1%'}}>
+                        <a href={post.cardmarket.url}><span>Card Market</span></a>
                         <div className="card-info-price-cardmarket-price">
                           <span>Trend Price: ${post.cardmarket.prices.trendPrice}</span>
                           <span>1 Day Avegare: ${post.cardmarket.prices.avg1}</span>
@@ -79,10 +78,8 @@ function Card() {
                         </div>
                       </div>
                     ) : null}
-                    <br/>
                   </div>
-                  <br/>
-                  <div className="card-info-description">
+                  <div className="card-info-description" style={{borderBottom:'1px solid black', paddingBottom:'1.2%', paddingTop:'1%'}}>
                     <span>Artist</span>
                     <span>Rarity</span>
                     <span>Set</span>
@@ -92,6 +89,7 @@ function Card() {
                     <span>{post.set.name}</span>
                     <span>{post.number}/{post.set.printedTotal}</span>
                   </div>
+
                 </div>
               </div>
             </div>
