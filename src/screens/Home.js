@@ -11,7 +11,6 @@ import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
 import {Redirect, Link} from 'react-router-dom';
 function Home({autorizado}) {
-  
   const [post, setPost] = useState(null)
   useEffect(() => {(
     async () =>{
@@ -79,6 +78,7 @@ function Home({autorizado}) {
     }
   ]
   };
+  console.log(autorizado)
   if(!autorizado){
     return <Redirect to="/Login"/>
   }
@@ -110,7 +110,7 @@ function Home({autorizado}) {
                 <tbody>
                   {busqueda && busqueda.map((item) => (
                       <tr>
-                        <td style={{width:'58vh'}} onClick={()=> console.log("hay que pasar a screen Card")}>{item.name} {item.rarity} ({item.id})</td>
+                        <td style={{width:'58vh'}} onClick={()=> {return <Redirect to="/Card"/>}}>{item.name} {item.rarity} ({item.id})</td>
                       </tr>                       
                     ))}
                 </tbody>

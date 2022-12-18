@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Alert from 'react-bootstrap/Alert';
 import '../App.css';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 function Login({autorizado}) {
   const [show, setShow] = useState(false);
@@ -60,7 +60,7 @@ function Login({autorizado}) {
               <br />
               <Row>
                 <Col md={{ span: 4, offset: 4 }}>
-                  <Button type="submit" color="primary" className="px-4" onClick={()=>{handleSubmit()}}>Login<Link to="/"></Link>
+                  <Button color="primary" className="px-4" onClick={()=>{handleSubmit()}}>Login
                   </Button>
                 </Col>
                 <Col md={{ span: 1, offset: 2 }}>
