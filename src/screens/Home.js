@@ -10,6 +10,10 @@ import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
 import {Navigate, useNavigate} from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+
 function Home() {
   const navigate = useNavigate();
 
@@ -111,11 +115,12 @@ function Home() {
   return (
     <>
       <div className="bkgd">
-        <nav>
-          <button onClick={() =>{setBoton(true)} }>
-            Log Out
-          </button>
-        </nav> 
+        <Navbar expand="lg" variant="light" bg="dark">
+          <Container>
+            <Navbar.Brand></Navbar.Brand>
+            <Button variant="danger" onClick={() =>{setBoton(true)} } className="justify-content-end">Log Out</Button>
+          </Container>
+        </Navbar>
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
           <img className="tcgicon" src={logo}/>  
         </div> 
@@ -150,8 +155,10 @@ function Home() {
               ))}
             </Slider>
           </div>
-          <h3>Cartas mas Valiosas:</h3>    
-          <Lista {...post}/>         
+          <div>
+            <h3>Cartas mas Valiosas:</h3>    
+            <Lista {...post}/> 
+          </div>           
       </div>
     </>
   );
