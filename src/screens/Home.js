@@ -17,6 +17,8 @@ import Button from 'react-bootstrap/Button';
 function Home() {
   const navigate = useNavigate();
 
+  const [irCarta, setIrCarta] = useState(null)
+
   const [nCarta, setNCarta] = useState("")
 
   const [irBusqueda, setIrBusqueda] = useState("")
@@ -103,6 +105,10 @@ function Home() {
   if(irBusqueda!=""){
     navigate('/List', { state: { carta: irBusqueda} });
   }
+
+  if(irCarta !== null){
+    navigate('/Card', { state: { carta: irCarta} })
+  }
   /////// Valida si se tiene un token que coincide
   const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
@@ -128,7 +134,7 @@ function Home() {
           <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
               <input class="search_input" type="text" name="" onKeyUp={(event) =>{ if(event.key === 'Enter') setIrBusqueda(event.target.value)}} onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
-              {/*<a href="#" class="search_icon"><i class="fa fa-search"></i></a>*/}
+              <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
             </div>
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
@@ -150,7 +156,7 @@ function Home() {
             <Slider {...settings}>
               {alto && alto.map((item) => (
                 <div className="card-position">
-                  <img className="card-image" src={item.images.small} alt="Pokemon Card" ></img>
+                  <img className="card-image" onClick={() =>setIrCarta(item.id)} src={item.images.small} style={{cursor:'pointer'}} alt="Pokemon Card" ></img>
                 </div>
               ))}
             </Slider>
