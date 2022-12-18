@@ -10,11 +10,12 @@ import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
 import {Navigate, useNavigate} from 'react-router-dom';
-import Card from './Card';
 function Home() {
   const navigate = useNavigate();
 
   const [nCarta, setNCarta] = useState("")
+
+  const [irBusqueda, setIrBusqueda] = useState("")
 
   const [boton, setBoton] = useState(false)
   
@@ -94,6 +95,10 @@ function Home() {
   if(nCarta!=""){
     navigate('/Card', { state: { carta: nCarta} });
   }
+
+  if(irBusqueda!=""){
+    navigate('/List', { state: { carta: irBusqueda} });
+  }
   /////// Valida si se tiene un token que coincide
   const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
 
@@ -117,7 +122,7 @@ function Home() {
         <div className="main_search h-100">
           <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
-              <input class="search_input" type="text" name="" onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
+              <input class="search_input" type="text" name="" onKeyUp={(event) =>{ if(event.key === 'Enter') setIrBusqueda(event.target.value)}} onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
               {/*<a href="#" class="search_icon"><i class="fa fa-search"></i></a>*/}
             </div>
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
