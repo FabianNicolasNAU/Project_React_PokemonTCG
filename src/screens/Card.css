@@ -138,5 +138,24 @@ body{
 }
 
 body[class="Rare Rainbow"] {
-    background-image: linear-gradient(to left top, #0000ff, #0078ff, #00a5ff, #00c6d9, #00e1ad, #46e085, #74dd54, #a0d600, #c2b700, #de9200, #f36300, #ff0000);
+    background: linear-gradient(297deg,#005aff,#00ff16,#ff0000);
+    background-size: 180% 180%;
+    animation: gradient-animation 3s ease infinite;
 }
+
+body[class="Rare Holo Star"] {
+    background-image: url(https://64.media.tumblr.com/d1e7d71dc6ffc2a42a21a68f39c17d0c/1f8d60ad27adbfa8-24/s540x810/6746baa5c1f2993d83cbdc11a84f69582d77b992.gifv);
+    
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
