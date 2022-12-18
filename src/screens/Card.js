@@ -7,7 +7,7 @@ import './Card.css';
 function Card() {
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards/ex11-2").then((response) => {
+    axios.get("https://api.pokemontcg.io/v2/cards/ex12-2").then((response) => {
       setPost(response.data.data);
     });
   }, [])
@@ -32,22 +32,26 @@ function Card() {
                 <div className="card-info-subtitle" style={{borderBottom:'1px solid black'}}>
                   <span>{post.supertype} - {post.subtypes.join(', ')}</span>
                 </div>
-                <br/>
-                <div className="card-info-price" style={{borderBottom:'1px solid black'}}>
+                <div className="card-info-price" style={{borderBottom:'1px solid black', paddingTop:'1.2%'}}>
                   {post.tcgplayer ? (
                     <div className="card-info-price-tcgplayer">
-                      <span>TCG-Player</span>
-                      <div className="card-info-price-tcgplayer-price">
-                        <span>Low: ${post.tcgplayer.prices.holofoil.low}</span>
-                        <span>Mid: ${post.tcgplayer.prices.holofoil.mid}</span>
-                        <span>High: ${post.tcgplayer.prices.holofoil.high}</span>
-                        <span>Market: ${post.tcgplayer.prices.holofoil.market}</span>
-                      </div>
+                      <span>TCG-Player</span><br/>
+                      {Object.keys(post.tcgplayer.prices).map((priceType) => (
+                        <>
+                          <span>{priceType}:</span>
+                          <div className="card-info-price-tcgplayer-price">
+                            {Object.keys(post.tcgplayer.prices[priceType]).map((price) => (
+                              price !== 'directLow' ? (
+                                <span>{price}: ${post.tcgplayer.prices[priceType][price]}</span>
+                              ) : null
+                            ))}
+                          </div>
+                        </>
+                      ))}                  
                     </div>
                   ) : null}
-                  <br/>
                   {post.cardmarket ? (
-                    <div className="card-info-price-cardmarket">
+                    <div className="card-info-price-cardmarket" style={{paddingTop:'1.5%'}}>
                       <span>Card Market</span>
                       <div className="card-info-price-cardmarket-price">
                         <span>Trend Price: ${post.cardmarket.prices.trendPrice}</span>
