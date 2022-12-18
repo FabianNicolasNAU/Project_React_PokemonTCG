@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
 
+body{
+    height: 100vh;
+}
+
 .card-select{
     display: flex;
     border: 1px;
@@ -126,34 +130,6 @@
     --colorpokemon: #3793dc;
 }
 
-.Ice {
-    --colorpokemon: rgb(38, 219, 235);
-}
-
-.Poison {
-    --colorpokemon: rgb(176, 38, 235);
-}
-
-.Ground {
-    --colorpokemon: rgb(181, 131, 92);
-}
-
-.Flying {
-    --colorpokemon: rgb(161, 215, 230);
-}
-
-.Psychic {
-    --colorpokemon: #fe6674;
-}
-
-.Ghost {
-    --colorpokemon: rgb(131, 24, 133);
-}
-
-.Bug {
-    --colorpokemon: rgb(113, 209, 10);
-}
-
-.Rock {
-    --colorpokemon: rgb(166, 87, 8);
+.Metal {
+    --colorpokemon: #717170;
 }
