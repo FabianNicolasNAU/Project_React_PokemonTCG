@@ -117,7 +117,7 @@ function Home() {
           <div class="d-flex justify-content-center h-100" style={{paddingLeft:'5%'}}>
             <div class="search">
               <input class="search_input" type="text" name="" onKeyUp={(event) =>{ if(event.key === 'Enter') setIrBusqueda(event.target.value)}} onChange={(event) => setBusca(event.target.value)} placeholder="Search here..."/>
-              <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+              <a href="#" class="search_icon"><i class="fa fa-search" ></i></a>
             </div>
             <img src="https://media.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif" alt="Pikachu running" style={{width:'5%'}}/>
           </div>
