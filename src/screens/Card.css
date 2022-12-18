@@ -143,9 +143,24 @@ body[class="Rare Rainbow"] {
     animation: gradient-animation 3s ease infinite;
 }
 
+body[class="Rare BREAK"] {
+    background: linear-gradient(300deg,#ffd700,#fffefd);
+    background-size: 120% 120%;
+    animation: gradient-animation 6s ease infinite;
+}
+
 body[class="Rare Holo Star"] {
-    background-image: url(https://64.media.tumblr.com/d1e7d71dc6ffc2a42a21a68f39c17d0c/1f8d60ad27adbfa8-24/s540x810/6746baa5c1f2993d83cbdc11a84f69582d77b992.gifv);
-    
+    background-image: url(https://64.media.tumblr.com/d1e7d71dc6ffc2a42a21a68f39c17d0c/1f8d60ad27adbfa8-24/s540x810/6746baa5c1f2993d83cbdc11a84f69582d77b992.gifv);    
+}
+
+body[class="Rare Holo"] {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d6/WarpTrails001.gif);
+    background-size: cover;
+}
+
+body[class="Rare Holo EX"] {
+    background-image: url(https://i.pinimg.com/originals/63/24/3a/63243aacfe563f25e472f9e187723df1.gif);
+    background-size: cover;
 }
 
 @keyframes gradient-animation {

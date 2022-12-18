@@ -145,10 +145,14 @@ function Home() {
               ))}
             </Slider>
           </div>
+
           <div>
-            <h3 className="text-center" style={{paddingBottom:'1vh'}}>Mix de cartas más valiosas</h3>    
+            <h3 className="text-center" style={{color:'white', paddingBottom:'1vh'}}>Mix de cartas más valiosas</h3>    
             <Lista {...post}/> 
-          </div>           
+          </div>         
+      </div>
+      <div className="bkgd" style={{height:'5vh'}}>
+
       </div>
     </>
   );
