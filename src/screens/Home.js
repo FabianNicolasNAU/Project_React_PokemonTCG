@@ -9,13 +9,11 @@ import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
-import {Navigate, useNavigate} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
+import Card from './Card';
 function Home() {
-
-  const navigate = useNavigate();
-
   const [boton, setBoton] = useState(false)
-
+  
   const [post, setPost] = useState(null)
   useEffect(() => {(
     async () =>{
@@ -89,6 +87,17 @@ function Home() {
     }
   ]
   };
+  function handleclick(nombre){
+    return <Navigate to={<Card carta={nombre}/>}/>
+  }
+  /////// Valida si se tiene un token que coincide
+  const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
+
+  if(localStorage.getItem("auth")!== token){
+    return <Navigate to={"/Login"}/>
+  }
+
+
   if(!post) return null
   return (
     <>
@@ -116,7 +125,7 @@ function Home() {
                 <tbody>
                   {busqueda && busqueda.map((item) => (
                       <tr>
-                        <td style={{width:'58vh'}} onClick={()=> {console.log("aaa")}}>{item.name} {item.rarity} ({item.id})</td>
+                        <td style={{width:'58vh'}} onClick={()=> {handleclick(item.name)}}>{item.name} {item.rarity} ({item.id})</td>
                       </tr>                       
                     ))}
                 </tbody>

@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './Card.css';
+import {Navigate} from 'react-router-dom';
 
 function Card() {
   const [post, setPost] = useState(null)
@@ -13,6 +14,12 @@ function Card() {
       setPost(response.data.data);
     });
   }, [])
+  /////// Valida si se tiene un token que coincide
+  const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
+
+  if(localStorage.getItem("auth")!== token){
+    return <Navigate to={"/Login"}/>
+  }
 
   if(!post) return null
 
