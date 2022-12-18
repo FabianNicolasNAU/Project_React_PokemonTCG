@@ -12,7 +12,7 @@ body{
     border-radius: 15px;
 }
 
-.card-info-title {
+.card-info-nav {
     font-size: 3em;
 }
 .card-info-subtitle {
@@ -116,6 +116,9 @@ body{
 
 .Fire {
     --colorpokemon: #e8291f;
+    background-image: url(https://www.seekpng.com/png/full/353-3532499_badgeleopard-the-energy-types-of-the-pokemon-tcg.png);
+    background-size: 2%;
+    background-repeat: no-repeat;
 }
 
 .Grass {

@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './Card.css';
@@ -7,7 +9,7 @@ import './Card.css';
 function Card() {
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards/ex12-2").then((response) => {
+    axios.get("https://api.pokemontcg.io/v2/cards/hgss1-1").then((response) => {
       setPost(response.data.data);
     });
   }, [])
@@ -26,9 +28,12 @@ function Card() {
             </div>
             <div className="div-2">
               <div className="content-card-info">
-                <div className="card-info-title">
-                  <span>{post.name}</span>
-                </div>
+                  <nav className="card-info-nav bg-transparent" style={{height:"8vh"}}>
+                    <Row className="h-100">
+                      <Col className="text-start" column lg={2}><span>{post.name}</span></Col>
+                      <Col className="text-end" column lg={9}><span style={{fontSize:"0.5em", color:"grey"}}>HP{post.hp}</span></Col>
+                    </Row>
+                  </nav>                    
                 <div className="card-info-subtitle" style={{borderBottom:'1px solid black'}}>
                   <span>{post.supertype} - {post.subtypes.join(', ')}</span>
                 </div>
