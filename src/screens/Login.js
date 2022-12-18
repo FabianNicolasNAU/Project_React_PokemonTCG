@@ -7,8 +7,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Alert from 'react-bootstrap/Alert';
 import '../App.css';
+import { Link, Redirect } from 'react-router-dom'
 
-function Login() {
+function Login({autorizado}) {
   const [show, setShow] = useState(false);
 
   const [user, setUser] = useState(null)
@@ -23,13 +24,14 @@ function Login() {
     if(user === loginPass.usuario && pass === loginPass.password){
       const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
         localStorage.setItem("auth", token);
-        window.location.href = '/'
     }
     else{
       !show && setShow(true)
     }
   };
-  
+  if(autorizado){
+    return <Redirect to="/"/>
+  }
   return (
     <>
       <div className="bkgd-login" style={{paddingTop:'11vh'}} > 
@@ -58,8 +60,7 @@ function Login() {
               <br />
               <Row>
                 <Col md={{ span: 4, offset: 4 }}>
-                  <Button color="primary" className="px-4" onClick={handleSubmit}>
-                    Login
+                  <Button type="submit" color="primary" className="px-4" onClick={()=>{handleSubmit()}}>Login<Link to="/"></Link>
                   </Button>
                 </Col>
                 <Col md={{ span: 1, offset: 2 }}>

@@ -9,28 +9,46 @@ import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
-function Home() {
+import {Redirect, Link} from 'react-router-dom';
+function Home({autorizado}) {
+  
   const [post, setPost] = useState(null)
-  useEffect(() => {
+  useEffect(() => {(
+    async () =>{
     axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.market&page=1&pageSize=35").then((response) => {
       setPost(response.data);
     });
+  }
+  )();
   }, [])
 
   const [alto, setAlto] = useState(null)
-  useEffect(() => {
+  useEffect(() => {(
+    async () =>{
     axios.get("https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.1stEditionHolofoil.high&page=1&pageSize=12").then((response) => {
       setAlto(response.data.data);
     });
+
+  }
+  )();
   }, [])
 
   const [busca, setBusca] = useState("")
 
   const [busqueda, setBusqueda] = useState(null)
-  useEffect(() => {
-    axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${busca}*&page=1&pageSize=7`).then((response) => {
-      setBusqueda(response.data.data);
-    });
+  useEffect(() => {(
+    async () =>{if(busca !=""){
+      axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${busca}*&page=1&pageSize=7`).then((response) => {
+        setBusqueda(response.data.data);
+      });
+    }
+    else{
+      setBusqueda("")
+    }
+    
+  }
+  )();
+    
   }, [busca])
 
   const settings = {
@@ -61,13 +79,17 @@ function Home() {
     }
   ]
   };
+  if(!autorizado){
+    return <Redirect to="/Login"/>
+  }
   if(!post) return null
   return (
     <>
       <div className="bkgd">
         <nav>
-          <button onClick={sessionStorage.clear()}>
+          <button onClick={localStorage.clear()}>
             Log Out
+            <Link to="/Login"></Link>
           </button>
         </nav> 
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
