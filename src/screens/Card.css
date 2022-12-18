@@ -103,7 +103,7 @@ body{
 }
 
 .Dragon {
-    --colorpokemon: #006ec8;
+    --colorpokemon: #a4881d;
 }
 
 .Fairy {
@@ -116,9 +116,6 @@ body{
 
 .Fire {
     --colorpokemon: #e8291f;
-    background-image: url(https://www.seekpng.com/png/full/353-3532499_badgeleopard-the-energy-types-of-the-pokemon-tcg.png);
-    background-size: 2%;
-    background-repeat: no-repeat;
 }
 
 .Grass {
@@ -135,4 +132,8 @@ body{
 
 .Metal {
     --colorpokemon: #717170;
+}
+
+body[class="Rare Rainbow"] {
+    background-image: linear-gradient(to left top, #0000ff, #0078ff, #00a5ff, #00c6d9, #00e1ad, #46e085, #74dd54, #a0d600, #c2b700, #de9200, #f36300, #ff0000);
 }
