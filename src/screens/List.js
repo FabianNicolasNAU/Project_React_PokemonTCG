@@ -5,6 +5,7 @@ import Lista from "../components/Lista";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import '../App.css';
+import BarraNav from "../components/BarraNav";
 
 function List (){
     const {state} = useLocation();
@@ -20,9 +21,13 @@ function List (){
     if(!post) return null
     return (
         <>
-        <div className="bkgd"> 
-        <Lista {...post}/>
-        </div>  
+            <BarraNav />
+            <div className="bkgd" style={{height: '100vh'}}> 
+                <div style={{paddingTop:'2vh'}}> 
+                    <h2 className="text-center">Resultados para {carta} </h2> 
+                    <Lista {...post} />
+                </div> 
+            </div>  
         </>
     )   
 }

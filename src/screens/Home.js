@@ -9,11 +9,8 @@ import 'font-awesome/css/font-awesome.css';
 import '../App.css';
 import Lista from "../components/Lista";
 import Table from 'react-bootstrap/Table';
-import {Navigate, useNavigate} from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-
+import {useNavigate} from 'react-router-dom';
+import BarraNav from "../components/BarraNav";
 function Home() {
   const navigate = useNavigate();
 
@@ -23,7 +20,6 @@ function Home() {
 
   const [irBusqueda, setIrBusqueda] = useState("")
 
-  const [boton, setBoton] = useState(false)
   
   const [post, setPost] = useState(null)
   useEffect(() => {(
@@ -65,10 +61,7 @@ function Home() {
     
   }, [busca])
 
-  if(boton === true){
-    localStorage.clear()
-    return <Navigate to={"/Login"}/>
-  }
+
 
   const settings = {
     dots: true,
@@ -110,23 +103,13 @@ function Home() {
     navigate('/Card', { state: { carta: irCarta} })
   }
   /////// Valida si se tiene un token que coincide
-  const token  =  "5d2272df-24bd-4cdc-a681-4c8ae7722c85";
-
-  if(localStorage.getItem("auth")!== token){
-    return <Navigate to={"/Login"}/>
-  }
-
+ 
 
   if(!post) return null
   return (
     <>
       <div className="bkgd">
-        <Navbar expand="lg" variant="light" bg="dark">
-          <Container>
-            <Navbar.Brand></Navbar.Brand>
-            <Button variant="danger" onClick={() =>{setBoton(true)} } className="justify-content-end">Log Out</Button>
-          </Container>
-        </Navbar>
+        <BarraNav/>
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '6vh'}}>
           <img className="tcgicon" src={logo}/>  
         </div> 
