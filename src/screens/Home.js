@@ -144,10 +144,15 @@ function Home() {
               ))}
             </Slider>
           </div>
+          <span className="display-6" style={{color:'white', marginLeft:'6%'}}>Cartas mas Valiosas:</span>
+          <br/>
           <div>
-            <h3>Cartas mas Valiosas:</h3>    
+            
             <Lista {...post}/> 
-          </div>           
+          </div>         
+      </div>
+      <div className="bkgd" style={{height:'5vh'}}>
+
       </div>
     </>
   );
