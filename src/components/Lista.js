@@ -10,7 +10,14 @@ function Lista (post) {
     if(irCarta !== null){
         navigate('/Card', { state: { carta: irCarta} })
     }
-    if(!post) return null
+    console.log(post.data)
+    if(post.data.length == 0) {
+        return (
+            <div className="bkgd d-flex justify-content-center"> 
+                <span className= "display-2" style={{fontWeight: 'bold', paddingTop: '13.9vh',paddingBottom: '13vh' }}>NO SE HAN ENCONTRADO RESULTADOS</span>
+            </div>
+        );
+    }
     return (
         <div className="grid"> 
         {post && post.data.map((item) => (
