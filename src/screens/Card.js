@@ -5,12 +5,15 @@ import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './Card.css';
-import {Navigate} from 'react-router-dom';
+import {Navigate, useLocation} from 'react-router-dom';
 
 function Card() {
+  const {state} = useLocation();
+  const { carta } = state;
+  console.log(carta)
   const [post, setPost] = useState(null)
   useEffect(() => {
-    axios.get("https://api.pokemontcg.io/v2/cards/sm9-1").then((response) => {
+    axios.get(`https://api.pokemontcg.io/v2/cards/${carta}`).then((response) => {
       setPost(response.data.data);
     });
   }, [])
